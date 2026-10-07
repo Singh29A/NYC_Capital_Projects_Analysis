@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Raw data (too large for GitHub; a download script will fetch it)
+data/raw/
+
+# Jupyter and editor clutter
+.ipynb_checkpoints/
+.vscode/
+.env
