@@ -1,0 +1,25 @@
+table,step,detail,rows_affected
+budget_schedule,Rename columns,Converted column names to snake_case,
+budget_schedule,Trim text,Stripped whitespace in 22 text columns; blanks set to null,
+budget_schedule,Exact duplicates,Removed fully duplicated rows,0.0
+budget_schedule,Keys,reporting_period → date; fms_id upper-cased; pid → nullable integer,26461.0
+budget_schedule,Date issues,"current_phase_start: 0 unparseable, 2 outside 1980-2050 set to null",2.0
+budget_schedule,Date issues,"forecast_completion: 1 unparseable, 0 outside 1980-2050 set to null",1.0
+budget_schedule,Date issues,"actual_design_start: 0 unparseable, 2 outside 1980-2050 set to null",2.0
+budget_schedule,Date issues,"actual_design_end: 0 unparseable, 3 outside 1980-2050 set to null",3.0
+budget_schedule,Date issues,"actual_construction_end: 0 unparseable, 1 outside 1980-2050 set to null",1.0
+budget_schedule,Parse dates,Converted 11 text columns to datetime,
+budget_schedule,Standardise phase,60 raw labels → 46 clean phases → 11 groups,
+budget_schedule,Budget check,1 negative and 499 zero total_budget rows flagged (kept),500.0
+budget_schedule,Spend check,Rows where spend_to_date > total_budget flagged (kept),323.0
+schedule_history,Rename columns,snake_case; variance_day → variance_days,
+schedule_history,Trim text,Stripped whitespace in 7 text columns; blanks set to null,
+schedule_history,Exact duplicates,Removed fully duplicated rows,0.0
+schedule_history,Date issues,"completion_date: 1 unparseable, 0 outside 1980-2050 set to null",1.0
+schedule_history,Parse dates,Converted 2 text columns to datetime,
+schedule_history,Categorise reasons,13 raw reasons → 13 categories,
+schedule_history,Join check,"PIDs not found in budget_schedule (kept, flagged)",140.0
+budget_spend_history,Trim text,Stripped whitespace in 2 text columns; blanks set to null,
+budget_spend_history,Exact duplicates,Removed fully duplicated rows,0.0
+budget_spend_history,Keys,year_month_reported → date; fms_id upper-cased,
+budget_spend_history,Join check,"FMS IDs not found in budget_schedule (kept, flagged)",8.0
